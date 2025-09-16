@@ -1,6 +1,6 @@
 # 🪄 D&D Spell Fine-Tuning (LoRA + LLaMA 3.2)
 
-This project fine-tunes [LLaMA 3.2](https://huggingface.co/meta-llama) using the Open5e SRD spell dataset and custom homebrew spells to generate **balanced, creative Dungeons & Dragons 5e spells**.  
+This project fine-tunes [LLaMA 3.2](https://huggingface.co/meta-llama) using the [Open5e SRD spell](https://api.open5e.com/v1/spells/) dataset and custom homebrew spells to generate **balanced, creative Dungeons & Dragons 5e spells**.  
 
 **LoRA (Low-Rank Adaptation)** is used for efficient training on consumer GPUs, and enforce D&D spell design rules through dataset curation and formatting.
 
