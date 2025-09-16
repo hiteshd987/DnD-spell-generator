@@ -1,6 +1,6 @@
 # 🪄 D&D Spell Fine-Tuning (LoRA + LLaMA 3.2)
 
-This project fine-tunes [LLaMA 3.2](https://huggingface.co/meta-llama) using the Open5e SRD spell dataset and custom homebrew spells to generate **balanced, creative Dungeons & Dragons 5e spells**.  
+This project fine-tunes [LLaMA 3.2](https://huggingface.co/meta-llama) using the [Open5e SRD spell](https://api.open5e.com/v1/spells/) dataset and custom homebrew spells to generate **balanced, creative Dungeons & Dragons 5e spells**.  
 
 **LoRA (Low-Rank Adaptation)** is used for efficient training on consumer GPUs, and enforce D&D spell design rules through dataset curation and formatting.
 
@@ -8,15 +8,23 @@ This project fine-tunes [LLaMA 3.2](https://huggingface.co/meta-llama) using the
 ## ⚙️ Installation
 Clone the repo and install dependencies inside a virtual environment (or conda):
 
+```bash
 git clone https://github.com/your-username/DnD-spell-generator.git
 cd DnD-spell-generator
+```
 
 # Create environment (conda or venv)
+
+```bash
 conda create -n dnd-spell python=3.10 -y
 conda activate dnd-spell
+```
 
 # Install dependencies
+
+```bash
 pip install -r requirements.txt
+```
 
 You’ll also need:
 
@@ -70,8 +78,12 @@ python generate.py
 
 You can also run the entire pipeline interactively in Jupyter:
 
+```bash
 jupyter notebook notebooks/exploration.ipynb
+```
 
 Or execute directly from the command line:
 
+```bash
 jupyter nbconvert --to notebook --execute notebooks/exploration.ipynb --output notebooks/exploration-output.ipynb
+```
