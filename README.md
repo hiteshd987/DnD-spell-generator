@@ -78,8 +78,12 @@ python generate.py
 
 You can also run the entire pipeline interactively in Jupyter:
 
+```bash
 jupyter notebook notebooks/exploration.ipynb
+```
 
 Or execute directly from the command line:
 
+```bash
 jupyter nbconvert --to notebook --execute notebooks/exploration.ipynb --output notebooks/exploration-output.ipynb
+```
