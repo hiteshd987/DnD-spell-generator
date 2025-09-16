@@ -8,15 +8,23 @@ This project fine-tunes [LLaMA 3.2](https://huggingface.co/meta-llama) using the
 ## ⚙️ Installation
 Clone the repo and install dependencies inside a virtual environment (or conda):
 
+```bash
 git clone https://github.com/your-username/DnD-spell-generator.git
 cd DnD-spell-generator
+```
 
 # Create environment (conda or venv)
+
+```bash
 conda create -n dnd-spell python=3.10 -y
 conda activate dnd-spell
+```
 
 # Install dependencies
+
+```bash
 pip install -r requirements.txt
+```
 
 You’ll also need:
 
