@@ -22,7 +22,7 @@ DnD-spell-generator/
 │   ├── finetune_spells.py          # Step 3: Training logic
 │   └── generate_spells.py          # Step 4: Inference script
 ├── media/
-│   └── demo.mp4                    # Demo recording Unity execution
+│   └── demo.mov                    # Demo recording Unity execution
 ├── .env.example                    # Template for HF and OpenAI keys
 ├── .gitignore                      # Ignores .env, __pycache__, models/
 ├── README.md                       # Project documentation
