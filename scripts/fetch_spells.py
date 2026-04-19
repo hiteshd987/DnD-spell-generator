@@ -110,11 +110,11 @@ def save_to_jsonl(data, path=OUTPUT_FILE):
 
 if __name__ == "__main__":
     # Load spells from both sources using the updated, robust function.
-    golden_spells = load_spells_from_file(OPEN5e_DATASET_FILE)
+    open5e_spells = load_spells_from_file(OPEN5e_DATASET_FILE)
     homebrew_spells = load_spells_from_file(HOMEBREW_FILE)
 
     # This line will now work correctly as both variables will be lists.
-    combined_spells = golden_spells + homebrew_spells
+    combined_spells = open5e_spells + homebrew_spells
 
     # De-duplicate the list, preferring the homebrew version if names conflict.
     unique_spells = {}
@@ -131,4 +131,4 @@ if __name__ == "__main__":
         formatted_dataset = convert_to_chat_format(final_dataset)
         save_to_jsonl(formatted_dataset)
     else:
-        print("No spells were loaded. Please ensure 'golden_dataset.json' exists.")
+        print("No spells were loaded. Please ensure 'dataset_open5e.json' exists.")

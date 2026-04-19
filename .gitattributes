@@ -1,0 +1,2 @@
+media/demo.wav filter=lfs diff=lfs merge=lfs -text
+media/demo.mov filter=lfs diff=lfs merge=lfs -text

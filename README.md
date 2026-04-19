@@ -5,6 +5,32 @@ This project fine-tunes [LLaMA 3.2](https://huggingface.co/meta-llama) using the
 **LoRA (Low-Rank Adaptation)** is used for efficient training on consumer GPUs, and enforce D&D spell design rules through dataset curation and formatting.
 
 ---
+
+## 📁 Project Structure
+
+```
+DnD-spell-generator/
+├── data/
+│   └── homebrew_spells.json        # Custom spells created by community
+├── models/
+│   └── lora-checkpoints/           # Saved LoRA adapters (gitignored)
+├── notebooks/
+│   └── main.ipynb                  # Interactive pipeline
+├── scripts/
+│   ├── create_dataset.py           # Step 1: API fetch & rationales
+│   ├── fetch_spells.py             # Step 2: Merging & formatting
+│   ├── finetune_spells.py          # Step 3: Training logic
+│   └── generate_spells.py          # Step 4: Inference script
+├── media/
+│   └── demo.mp4                    # Demo recording Unity execution
+├── .env.example                    # Template for HF and OpenAI keys
+├── .gitignore                      # Ignores .env, __pycache__, models/
+├── README.md                       # Project documentation
+└── requirements.txt                # Dependency list
+```
+---
+
+
 ## ⚙️ Installation
 Clone the repo and install dependencies inside a virtual environment (or conda):
 
@@ -52,8 +78,7 @@ python create_dataset.py
 Merges SRD + homebrew spells, deduplicates, and formats into LLaMA 3 chat format (data/formatted_dnd_spells.jsonl).
 
 ```bash
-cd scripts
-python fetch.py
+python fetch_spells.py
 ```
 
 3. Fine-Tune (finetune.py)
@@ -61,8 +86,7 @@ python fetch.py
 Runs LoRA fine-tuning on the formatted dataset using Hugging Face transformers, trl, and peft.
 
 ```bash
-cd scripts
-python finetune.py
+python finetune_spells.py
 ```
 
 4. Generate (generate.py)
@@ -70,8 +94,7 @@ python finetune.py
 Loads the fine-tuned model and generates creative, balanced D&D spells.
 
 ```bash
-cd scripts
-python generate.py
+python generate_spells.py
 ```
 
 ## Notebook Mode
@@ -79,11 +102,11 @@ python generate.py
 You can also run the entire pipeline interactively in Jupyter:
 
 ```bash
-jupyter notebook notebooks/exploration.ipynb
+jupyter notebook notebooks/main.ipynb
 ```
 
 Or execute directly from the command line:
 
 ```bash
-jupyter nbconvert --to notebook --execute notebooks/exploration.ipynb --output notebooks/exploration-output.ipynb
+jupyter nbconvert --to notebook --execute notebooks/main.ipynb --output notebooks/main-output.ipynb
 ```
